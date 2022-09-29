@@ -1,22 +1,30 @@
+//This Program to find Mean, Absolute value, Lowercase and Biggest Element using HeaderFile.
+
 #include<stdio.h>
-#define sum(a,b) a+b //To calculate sum of two numbers
-#define square(a) a*a //To calculate square of a number
-#define cube(a) a*a*a //To calculate cube of a number
-#define isalph(d) (((d)>='a'&&(d)<='z')||((d)>='A'&&(d)<='Z')) //To check the character is alphabet or not
-#define isupp(d) ((d)>='A'&&(d)<='Z') //To check the character is uppercase or lowercase
-int main(){
-    char c;
-    printf("Enter a character:");
-    scanf("%c",&c);//To read the character
-    if(isalph(c))//First check is alpha using isalph macro
-       if(isupp(c)){ //To check is uppercase using isupp macro
-            printf("%c is uppercase\n",c);
-       }
-       else{
-            printf("%c is lowercase\n",c);
-       }
-    printf("Sum of A and B :%d\n",sum(10,20));//To print sum of two values using macros
-    printf("square of A    :%d\n",square(10));//To print square of a value using macros
-    printf("cube of A      :%d\n",cube(10));//To print cube of a value using macros
+#include<math.h>
+#define SIZE 20
+#include "MyHeader.h"
+
+void Macros(int,int,char[]);
+
+int main()
+{
+    int a=-10,b=20;
+
+    char s[SIZE];
+
+    printf("Enter the string : ");
+    scanf("%s",&s);
+
+    Macros(a,b,s);
+
     return 0;
+}
+
+void Macros(int a,int b,char s[])
+{
+    printf("MEAN  : %d\n",MEAN(a,b));
+    printf("Absolute value : %d\n",ABS(a));
+    printf("Lowercase : %s\n",STRLWR(s));
+    printf("Biggest Element : %d\n",FINDBIGGER(a,b));
 }

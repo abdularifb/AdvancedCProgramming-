@@ -1,9 +1,15 @@
 #include<stdio.h>
-#include "mylib.h"
+#include<malloc.h>
 int main(){
-    char s[] ="abdul arif";
-    removecharacters(s);
-    length(s);
-    frequency(s);
+    char s[100];
+    int *ptr = (int*)malloc(10);
+    *ptr = 15000;
+    printf("%d\n",*ptr);
+    printf("%p\n",ptr);
+    realloc(ptr,2);
+    printf("%d\n",*ptr);
+    printf("%p\n",ptr);
+    printf("%d",sizeof(ptr)/sizeof(int));
     return 0;
 }
+
